@@ -19,17 +19,17 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Genre {
+@AllArgsConstructor
+public class Casts {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int genreId;
-	private String genreName;
+	private int castId;
+	private String castName;
 	
-	@ManyToMany(mappedBy = "genreList")
-//	@JsonBackReference("genre-movie")
+	@ManyToMany(mappedBy = "castList")
+//	@JsonBackReference("casts-movie")
 	@JsonIgnore
-	private Set<Movie> Gmovie = new HashSet<>();
+	private Set<Movie> cMovie = new HashSet<>();
 }
